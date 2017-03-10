@@ -9,7 +9,7 @@ node app
 
 ## 需要用户设定的内容  
 1、设置express的cookie /app.js line.12  
-2、设置线上运行相关内容 /system/config.js  
+2、设置线上运行相关内容 /system/config.js [默认的帐号admin，密码123456]  
 3、设置SMTP发信配置 /system/mail.js  
 4、设置短信[基于阿里大于]的配置 /system/sms.js  
 
