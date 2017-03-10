@@ -28,11 +28,13 @@
         %>
         <div class="site-item ${(isLogin)?'login':''} ${(item.code=='200')?'':'fail'}"
         data-ref-time="${item.time - (now - item.update)}"
+        <% if (isLogin) {%>
         data-index="${item.index}"
         data-name="${item.name}"
         data-url="${item.url}"
         data-time="${item.time}"
         data-tips="${item.tips}"
+        <% } %>
         >
             <div class="site-info-item site-name">
                 <span class="name">网站名称</span>
