@@ -12,6 +12,13 @@ node app
 2、设置线上运行相关内容 /system/config.js [默认的帐号admin，密码123456]  
 3、设置SMTP发信配置 /system/mail.js  
 4、设置短信[基于阿里大于]的配置 /system/sms.js  
+4-1、短信模板参考   
+```
+site_name:网站名称
+site_code:状态码
+
+亲，您关注的网站：${site_name}，目前状态：${site_code}，已出现访问错误，请您及时维护您的网站。
+```
 
 
 ## 其它说明  
