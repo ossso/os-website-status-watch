@@ -1,0 +1,28 @@
+
+/**
+ * 这是一个配色文件，方便修改
+ * 如果DIY模板的颜色，就复制一份本文件，然后把对应的色值改掉，引入到style.scss中（可以替换掉@import "color";）
+ * - 如何编译sass？
+ * 使用koala就能编译[编译前设置好路径，处理掉utf8中文兼容问题]
+ * Atom等编辑器中，通过sass-autocompile等执行编译
+ * 方法不局限于上面这些
+ * 付费服务：
+ *     将配好的颜色参数发送给橙色阳光，仅需支付￥9.9/次就能获得编译后文件
+ */
+
+// 文本默认颜色
+$textDefaultColor: #555;
+// body背景色
+$bodyDefaultBackgroundColor: #eee;
+// 链接默认颜色
+$linkDefaultColor: #369;
+// 链接默认hover颜色
+$linkDefaultHoverColor: #f66;
+
+// 高亮颜色
+$highColor: #f66;
+// 高亮色相对的深色
+$highColorBlack: #f33;
+
+$iColor: #576DC7;
+$tColor: #2B4782;

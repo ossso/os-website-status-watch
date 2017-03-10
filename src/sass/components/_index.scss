@@ -1,0 +1,193 @@
+.home {
+    margin: 40px auto;
+    border: 1px solid rgba(0,0,0,.14);
+    border-radius: 8px;
+    background: #fff;
+    overflow: hidden;
+    .title {
+        position: relative;
+        width: 100%;
+        height: 60px;
+        padding: 0 30px;
+        border-bottom: 1px solid rgba(0,0,0,.14);
+        background: #fafafa;
+        border-top-left-radius: 8px;
+        border-top-right-radius: 8px;
+        h3 {
+            line-height: 59px;
+            font-size: 20px;
+            font-weight: 300;
+            color: #555;
+        }
+        .view-more {
+            position: absolute;
+            top: 50%;
+            right: 30px;
+            height: 36px;
+            padding: 0 15px;
+            margin-top: -18px;
+            line-height: 34px;
+            font-size: 14px;
+            color: #666;
+            border: 1px solid #e1e1e1;
+            border-radius: 4px;
+            background: #fafafa;
+            &:hover {
+                background: #eee;
+                background-image: linear-gradient(180deg,#f5f5f5,#eee);
+            }
+        }
+    }
+    .site-list {
+        @include flexbox;
+        .site-item {
+            position: relative;
+            width: 33.33%;
+            padding: 30px;
+            height: 420px;
+            border-right: 1px solid #efefef;
+            border-bottom: 1px solid #efefef;
+            &:nth-child(3n) {
+                border-right: 1px solid transparent;
+            }
+            &.fail {
+                background: #ffc;
+            }
+            &.login {
+                height: 450px;
+            }
+            @media screen and (max-width: $mediaPCMin) {
+                width: 50%;
+                &:nth-child(3n) {
+                    border-right: 1px solid #efefef;
+                }
+                &:nth-child(2n) {
+                    border-right: 1px solid transparent;
+                }
+            }
+            @media screen and (max-width: $mediaMobile) {
+                padding-bottom: 50px;
+                width: 100%;
+                height: auto;
+                &.login {
+                    height: auto;
+                }
+            }
+        }
+    }
+    .site-info-item {
+        position: relative;
+        height: 55px;
+        padding-left: 100px;
+        line-height: 55px;
+        font-size: 16px;
+        .name {
+            position: absolute;
+            top: 0;
+            left: 0;
+            line-height: inherit;
+            width: 100px;
+            color: #666;
+        }
+        @media screen and (max-width: $mediaMobile) {
+            padding-left: 80px;
+            height: 35px;
+            line-height: 35px;
+            .name {
+                width: 80px;
+            }
+        }
+        .value {
+            color: #333;
+            @include textHidden;
+        }
+        &.site-name {
+            .value {
+                font-weight: 700;
+            }
+        }
+        &.site-url {
+            .value a {
+                color: #333;
+                border-bottom: 1px solid #555;
+            }
+        }
+        &.site-status {
+            .value {
+                font-weight: 700;
+                color: #096;
+                .fa {
+                    font-weight: normal;
+                }
+            }
+        }
+        &.site-code {
+            .value {
+                color: #f00;
+            }
+        }
+    }
+    .site-option {
+        opacity: 0;
+        position: absolute;
+        bottom: 19px;
+        left: 0;
+        width: 100%;
+        height: 60px;
+        padding: 11px 30px;
+        @include transition;
+    }
+    @media screen and (max-width: $mediaMobile) {
+        .site-option {
+            opacity: 1;
+            bottom: 2px;
+            height: 38px;
+            padding: 0 30px;
+        }
+    }
+    .site-item:hover .site-option {
+        opacity: 1;
+    }
+    .fail {
+        .site-info-item {
+            height: 40px;
+            line-height: 40px;
+        }
+        .site-status .value {
+            color: #f00;
+        }
+    }
+}
+
+.option-form {
+    display: none;
+    opacity: 0;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 600px;
+    padding: 30px;
+    background: #fff;
+    box-shadow: 0 1px 8px #ccc;
+    z-index: 9999;
+    @include transition;
+    @include transform(translate(-50%,-50%));
+    @media screen and (max-width: 600px) {
+        width: 90%;
+        padding: 15px;
+    }
+    * {
+        box-sizing: content-box;
+    }
+    .close-btn {
+        display: block;
+        position: absolute;
+        top: 0;
+        right: 0;
+        line-height: 36px;
+        padding: 0 12px;
+        font-size: 18px;
+        color: #333;
+        cursor: pointer;
+    }
+}

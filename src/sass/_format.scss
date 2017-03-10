@@ -1,0 +1,113 @@
+html,
+body {
+    width:100%;
+    height:100%;
+}
+body {
+    font: 14px/25px $fontFamily;
+    color: $textDefaultColor;
+    background: $bodyDefaultBackgroundColor;
+    overflow-x: hidden;
+}
+ul,
+ol,
+li {
+    list-style: none;
+}
+html,
+body,
+h1,h2,h3,h4,h5,h6,
+ul,li,ol,
+blockquote,
+pre,
+p,
+table,tbody,th,td,tr,
+span {
+    margin: 0;
+    padding: 0;
+    border-radius: 0px;
+}
+img {
+    border: none;
+    outline: none;
+}
+input[type="text"],
+input[type="text"]:focus,
+input[type="text"]:active,
+input[type="password"],
+input[type="password"]:focus,
+input[type="password"]:active,
+textarea,
+textarea:active,
+textarea:focus,
+button,
+button:active,
+button:focus,
+button:invalid,
+a:active,
+a:visited,
+a:link {
+    outline: 0;
+    outline-color: transparent;
+    -webkit-appearance: none;
+}
+a:link,
+a:visited {
+    text-decoration:none;
+}
+a:hover {
+    color: $linkDefaultHoverColor;
+}
+a {
+    color: $linkDefaultColor;
+    -webkit-transition:color .15s linear;
+    transition:color .15s linear;
+    cursor: pointer;
+}
+.fl {
+    float:left;
+}
+.fr {
+    float:right;
+}
+.clear,
+.clear::before,
+.clear::after {
+    clear:both;
+}
+.clear::before,
+.clear::after {
+    content: '';
+    display: table;
+}
+
+// 默认盒模型为border-box
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+.container {
+    width: $innerWidth;
+    margin: 0 auto;
+}
+
+@media screen and (max-width: $mediaPCNormal) {
+    .container {
+        width: $minInnerWidth;
+    }
+}
+
+@media screen and (max-width: $mediaPCMin) {
+    .container {
+        // width: $padInnerWidth;
+        width: $mobileInnerWidth;
+    }
+}
+
+@media screen and (max-width: $mediaMobile) {
+    .container {
+        width: $mobileInnerWidth;
+    }
+}

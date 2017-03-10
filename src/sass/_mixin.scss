@@ -1,0 +1,55 @@
+@mixin transition($types: all,$times: .3s,$animate: linear) {
+    -webkit-transition: $types $times $animate;
+    -moz-transition: $types $times $animate;
+    transition: $types $times $animate;
+}
+@mixin transform($arguments) {
+    -webkit-transform: $arguments;
+    -moz-transform: $arguments;
+    -ms-transform: $arguments;
+    transform: $arguments;
+}
+@mixin textHidden {
+    width: 100%;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+@mixin linearBG($deg:0deg,$begin:rgba(255,255,255,1),$end:rgba(255,255,255,1)) {
+    background: -prefix-linear-gradient($deg,$begin,$end);
+    background: linear-gradient($deg,$begin,$end);
+}
+
+@mixin rightScroll {
+    overflow-x: hidden;
+    overflow-y: auto;
+    &::-webkit-scrollbar {
+        width: 10px;
+        cursor: pointer;
+    }
+    &::-webkit-scrollbar-thumb {
+        border-radius: 5px;
+        background: #555;
+    }
+    &::-webkit-scrollbar-track {
+        border-radius: 5px;
+        background: #aaa;
+    }
+}
+
+@mixin prefix($property, $value){
+    -webkit-#{$property}: $value;
+    -moz-#{$property}: $value;
+    -ms-#{$property}: $value;
+    #{$property}: $value;
+}
+
+@mixin flexbox {
+    display: -webkit-flex;
+    display: -ms-flex;
+    display: flex;
+    @include prefix(flex-wrap,wrap);
+    @include prefix(flex-direction,row);
+    @include prefix(justify-content,space-between);
+}

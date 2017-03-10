@@ -1,0 +1,25 @@
+// compileCompressed: ../../public/static/css/style.css
+@import "variable";
+@import "mixin";
+@import "color";
+@import "format";
+
+@import "components/header";
+@import "components/index";
+
+.login-main {
+    margin: 40px auto;
+    width: 600px;
+    padding: 80px;
+    background: #fff;
+    @media screen and (max-width: 600px) {
+        width: 96%;
+    }
+}
+
+.footer {
+    padding: 25px 0;
+    font-size: 12px;
+    text-align: center;
+    color: #999;
+}
